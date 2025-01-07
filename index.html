@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        /* General Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for Centering the Login Box */
+        .container {
+            text-align: center;
+        }
+
+        /* Login Box Styling */
+        .login-box {
+            width: 350px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Heading Styling */
+        .login-box h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Input Fields Styling */
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Submit Button Styling */
+        .login-box input[type="submit"] {
+            width: 100%;
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Submit Button Hover Effect */
+        .login-box input[type="submit"]:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Login</h1>
+            <form name="f1" action="authentication.php" onsubmit="return validation()" method="POST">
+                <p>
+                    <label for="user">Username:</label>
+                    <input type="text" id="user" name="user" placeholder="Enter your username">
+                </p>
+                <p>
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" name="pass" placeholder="Enter your password">
+                </p>
+                <p>
+                    <input type="submit" id="btn" value="Login">
+                </p>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validation() {
+            var id = document.f1.user.value;
+            var ps = document.f1.pass.value;
+            if (id == "" || ps == "") {
+                alert("Username and Password fields cannot be empty");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
